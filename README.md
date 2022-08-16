@@ -31,3 +31,10 @@ use `ctrl-shift-C`.
 ![usage-gif-2](https://github.com/ZhangTe/joplin-plugin-format-painter/blob/main/doc/assets/joplin-format-painter-usage2.gif)
 
 ![usage-gif-1](https://github.com/ZhangTe/joplin-plugin-format-painter/blob/main/doc/assets/joplin-format-painter-usage3.gif)
+
+## Donation
+Wish you enjoy this work. 
+It will be a greet help when you can make a donation:<br/>
+<a href='https://afdian.net/@ztbxxt'><img src="https://afdian.net/static/img/logo/logo.png" alt="alt text" height="20px" /></a>
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/ztbxxt) 
+<a href='https://Ko-fi.com/ztbxxt'><img src="https://storage.ko-fi.com/cdn/kofi_stroke_cup.svg" alt="alt text" height="20px" /></a>
