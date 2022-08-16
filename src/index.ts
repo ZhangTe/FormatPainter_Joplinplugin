@@ -116,7 +116,6 @@ joplin.plugins.register({
 
 
 		await joplin.contentScripts.onMessage(CONTENT_SCRIPT_ID, async (message:any)=> {
-			console.info(message);
 			if (message.name === 'getSel_l' ) await joplin.settings.setValue(SETTING_FORE, message.key);
 			else if (message.name === 'getSel_r') await joplin.settings.setValue(SETTING_END, message.key);
 			return "";
