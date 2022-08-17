@@ -25,9 +25,9 @@ add after the text ：文本后的格式标签
 ![usage-gif-2](https://github.com/ZhangTe/joplin-plugin-format-painter/blob/main/doc/assets/joplin-format-painter-usage2.gif)
 
 ![usage-gif-1](https://github.com/ZhangTe/joplin-plugin-format-painter/blob/main/doc/assets/joplin-format-painter-usage3.gif)
-## 发电
+## 支持我
 如果您喜欢我的作品， 
 您的捐赠将是对其最大的认可：<br/>
-<a href='https://afdian.net/@ztbxxt'><img src="https://afdian.net/static/img/logo/logo.png" alt="alt text" height="20px" /></a>
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://paypal.me/ztbxxt) 
-<a href='https://Ko-fi.com/ztbxxt'><img src="https://storage.ko-fi.com/cdn/kofi_stroke_cup.svg" alt="alt text" height="20px" /></a>
+<a href='https://Ko-fi.com/ztbxxt'><img src="https://img.shields.io/badge/Donate-Ko_fi-442200.svg" /><img src="https://storage.ko-fi.com/cdn/kofi_stroke_cup.svg" alt="alt text" height="20" width="30" /></a>
+<a href='https://paypal.me/ztbxxt'><img src="https://img.shields.io/badge/Donate-PayPal-2275FF.svg" /><img src="https://www.paypalobjects.com/webstatic/icon/pp32.png" alt="alt text" height="20" width="20" /></a>
+<a href='https://afdian.net/@ztbxxt'><img src="https://img.shields.io/badge/Donate-爱发电-6900CF.svg"/><img src="https://afdian.net/static/img/logo/logo.png" height="20"  width="20" /></a>
