@@ -221,23 +221,20 @@ function trim(cursorL, cursorR){
     
     }
     else {
-        var m = 0;
         do  {
             tmpcursor = curIter;
             curSel = moveCursor(curIter, fore_.length);
             cm.setSelection(curIter,curSel);
-            if (  stringhead==null && (m >= startOffset) ) stringhead = curIter;
+            if (  stringhead==null && cursorOver(curIter,cursorL) ) stringhead = curIter;
             
             if(Stringequal(cm.getSelection(),fore_)){
                 curs.push({head:curIter,end:curSel});
                 j++;
                 curIter = moveCursor(curIter, fore_.length);
-                m+= fore_.length;
                 continue;
             }
             stringend = curIter;
             curIter = moveCursor(curIter,1)
-            m++;
         }while(cursorOver(cursorR,curIter) && !cursorOver(tmpcursor,curIter));
         i = Math.floor(j / 2);
         j = j - i;
