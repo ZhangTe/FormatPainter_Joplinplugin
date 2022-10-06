@@ -14,16 +14,16 @@ const BUTTON_TOGGLE_ID         = 'toggle_format_painter';
 
 const SETTING_SECTION_ID       = 'settings.formatpainter';
 const SETTING_LABEL            = 'Format Painter';
-const SETTING_FORE             = 'foretext';
-const SETTING_FORE_LABEL       = 'add before the text';
+const SETTING_PREFIX            = 'prefix';
+const SETTING_PREFIX_LABEL       = 'Set Prefix';
 
-const SETTING_END              = 'endtext';
-const SETTING_END_LABEL        = 'add after the text';
+const SETTING_SUFFIX              = 'suffix';
+const SETTING_SUFFIX_LABEL        = 'Set Suffix';
 const COMMAND_QS_L_NAME        = 'quick-setting-L';
-const COMMAND_QS_L_LABEL       = 'Format painter quick setting foretext';
+const COMMAND_QS_L_LABEL       = 'Format painter quick setting prefix';
 
 const COMMAND_QS_R_NAME        = 'quick-setting-R';
-const COMMAND_QS_R_LABEL       = 'Format painter quick setting endtext';
+const COMMAND_QS_R_LABEL       = 'Format painter quick setting suffix';
 const MENU_QS_L_ID             = 'quick.setting.L';
 const MENU_QS_R_ID             = 'quick.setting.R';
 
@@ -41,19 +41,21 @@ joplin.plugins.register({
 		});
 
 		await joplin.settings.registerSettings({
-			'foretext': {
+			'prefix': {
 				value: "",
 				type: SettingItemType.String,
 				section: SETTING_SECTION_ID,
 				public: true,
-				label: SETTING_FORE_LABEL
+				label: SETTING_PREFIX_LABEL,
+				description:"Quick Setting " + HOTKEY_QS_L
 			},
-			'endtext': {
+			'suffix': {
 				value: "",
 				type: SettingItemType.String,
 				section: SETTING_SECTION_ID,
 				public: true,
-				label: SETTING_END_LABEL
+				label: SETTING_SUFFIX_LABEL,
+				description:"Quick Setting " + HOTKEY_QS_R
 			}
 		});
 
@@ -71,7 +73,7 @@ joplin.plugins.register({
 			execute: async () => {
 				await joplin.commands.execute('editor.execCommand', {
 					name: CODEMIRROR_TOGGLE_COMMAND,
-					args: [await joplin.settings.value(SETTING_FORE),await joplin.settings.value(SETTING_END),toggle()] 
+					args: [await joplin.settings.value(SETTING_PREFIX),await joplin.settings.value(SETTING_SUFFIX),toggle()] 
 				});
 			},
 		});
@@ -116,8 +118,8 @@ joplin.plugins.register({
 
 
 		await joplin.contentScripts.onMessage(CONTENT_SCRIPT_ID, async (message:any)=> {
-			if (message.name === 'getSel_l' ) await joplin.settings.setValue(SETTING_FORE, message.key);
-			else if (message.name === 'getSel_r') await joplin.settings.setValue(SETTING_END, message.key);
+			if (message.name === 'getSel_l' ) await joplin.settings.setValue(SETTING_PREFIX, message.key);
+			else if (message.name === 'getSel_r') await joplin.settings.setValue(SETTING_SUFFIX, message.key);
 			return "";
 		});
 

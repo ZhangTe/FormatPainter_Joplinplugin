@@ -125,8 +125,8 @@ function cursorOver(cur1, cur2){
 
 function mouseup_(eventarg){
 
-    console.log('selection output');
-    console.log(cm.listSelections());
+    // console.log('selection output');
+    // console.log(cm.listSelections());
     if (cm.somethingSelected()) {
         
         var cursorL = cm.getCursor('from');
@@ -170,8 +170,8 @@ function trim(cursorL, cursorR){
     var tmpcursor;
     if( !Stringequal(fore_, end_) ) {
         var keys = [];
-        keys.push({key:headislonger?fore_:end_,count:0});
-        keys.push({key:headislonger?end_:fore_,count:0});
+        keys.push({key:headislonger?fore_:end_,count:new Array()});
+        keys.push({key:headislonger?end_:fore_,count:new Array()});
         //console.log('keys');
         //console.log(keys);
         do{
@@ -188,7 +188,7 @@ function trim(cursorL, cursorR){
                     cm.setSelection(curIter,curSel);
                     if(Stringequal(cm.getSelection(),key_.key)){
                         curs.push({head:curIter,end:curSel});
-                        key_.count++;
+                        key_.count.push(curIter);
                         curIter = moveCursor(curIter, key_.key.length);
                         keyhit = true;
                         //console.log('hit');
@@ -198,14 +198,16 @@ function trim(cursorL, cursorR){
                 }
             });
             stringend = curIter;
+			
             if (!keyhit)  curIter = moveCursor(curIter,1)
             
             
         }while(cursorOver(cursorR,curIter) && !cursorOver(tmpcursor,curIter));
-        //console.log('keys after processing');
-        //console.log(keys);
-        i = headislonger?keys[0].count:keys[1].count;
-        j = headislonger?keys[1].count:keys[0].count;
+		//console.log(keys);
+        console.log('keys after processing');
+        console.log(keys);
+        i = headislonger?keys[0].count.length:keys[1].count.length;
+        j = headislonger?keys[1].count.length:keys[0].count.length;
         if ( i == j && i > 0 ) {
             i = 1;
             j = 1;
@@ -297,7 +299,7 @@ function trim(cursorL, cursorR){
     cm.replaceSelections(replace, 'around');
 }
 
-function easymodetrim(){
+function borderModeTrim(){
     if (cm.somethingSelected()) {
         var cursorL = cm.getCursor('from');
         var cursorR = cm.getCursor('to');

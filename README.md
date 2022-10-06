@@ -2,7 +2,7 @@
 # Format Painter
 This is a [joplin](https://joplinapp.org/) notebook plugin.
 
-This plugin can help you "Paint Text" easily. Functionally it adds text before and after what you select everytime when you toggle it on.
+This plugin can help you "Paint Text" easily. Functionally it adds prefix and suffix around the text that you select .
 Currently it just support the *mouse selection*.
 
 >[joplin github repo](https://github.com/laurent22/joplin)
@@ -17,11 +17,11 @@ Settings: The text you want to wrap with.
 
 # QuickSetting & Hotkeys
 
-To *quick-setting* the head and end text:
+To *quick-setting* the prefix and suffix text:
 first select the pattern in editor -- 
 then
-use `ctrl-alt-,` for *head*;
-use `ctrl-alt-.` for *end*. (use .>, distinct from numpad ./del)
+use `ctrl-alt-,` for *prefix*;
+use `ctrl-alt-.` for *suffix*. (use .>, distinct from numpad ./del)
 
 To *toggle* the painter
 use `ctrl-shift-C`.
