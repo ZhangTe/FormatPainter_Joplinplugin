@@ -138,7 +138,7 @@ function mouseup_(eventarg){
 
 /**
  * To trim the keywords in the selected string paragraph
- * if there is multiple keywords in the selection, this will delete them by fore-end pair, 
+ * if there is multiple keywords in the selection, this will delete them by pre-suf pair, 
  * until it is all cleared or only one side keyword left.
  * if there is nothing found, this will wrap the text with the keywords.
  * @param {Cursor} cursorL 
